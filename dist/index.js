@@ -43,7 +43,7 @@ function submit() {
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
                 // value.children[1].value = timeElement.value;
-                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(e, timeElement.value), e.dispatchEvent(new Event('input', {
+                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'textContent').set.call(e, timeElement.value), e.dispatchEvent(new Event('input', {
                     bubbles: !0
                 }));
             }
