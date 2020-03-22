@@ -14,8 +14,12 @@ if (ownerEditContainerHeader == null) {
         if (e.target.className == 'Checkbox-check') {
             checkBoxArea.length = 0;
             commentArea.childNodes.forEach(function(value: any){
-                if (typeof value.attributes[2].value !== undefined) {
-                    console.log(value.attributes[2].value);
+                try {
+                    if (typeof value.attributes[2].value !== undefined) {
+                        console.log(value.attributes[2].value);
+                    }
+                }catch {
+
                 }
             });
         }

@@ -16,8 +16,12 @@ else {
         if (e.target.className == 'Checkbox-check') {
             checkBoxArea.length = 0;
             commentArea.childNodes.forEach(function (value) {
-                if (typeof value.attributes[2].value !== undefined) {
-                    console.log(value.attributes[2].value);
+                try {
+                    if (typeof value.attributes[2].value !== undefined) {
+                        console.log(value.attributes[2].value);
+                    }
+                }
+                catch (_a) {
                 }
             });
         }
