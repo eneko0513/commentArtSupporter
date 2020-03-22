@@ -7,7 +7,7 @@ if (ownerEditContainerHeader == null) {
 } else {
     // イベントリスナー追加
     let gridElement: HTMLElement = document.getElementById('enquete-placeholder') as HTMLElement;
-    gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
+    gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
     document.addEventListener('click', function (e: any) {
         console.log(e.target);
         // チェックボックスが押された行のデータを表示する
@@ -16,12 +16,12 @@ if (ownerEditContainerHeader == null) {
             commentArea.childNodes.forEach(function(value: any){
                 console.log(value);
             });
-
-            // checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
         }
     }, false);
 }
 
 function submit() {
+    const timeElement: HTMLElement = document.getElementById('time') as HTMLElement;
+    // commentArea[5].text = timeElement.textContent;
     alert('TEST');
 }
