@@ -10,7 +10,7 @@ else {
     // イベントリスナー追加
     var gridElement = document.getElementById('enquete-placeholder');
     gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
-    document.addEventListener('click', function (e) {
+    document.addEventListener('mouseup', function (e) {
         console.log(e.target);
         // チェックボックスが押された行のデータを表示する
         if (e.target.className == 'Checkbox-check') {
