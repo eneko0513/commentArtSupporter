@@ -13,13 +13,11 @@ if (ownerEditContainerHeader == null) {
         // チェックボックスが押された行のデータを表示する
         if (e.target.className == 'Checkbox-check') {
             checkBoxArea.length = 0;
-
-            const checkboxList: any = commentArea.childNodes;
-            checkboxList.forEach(function(value: any){
+            commentArea.childNodes.forEach(function(value: any){
                 console.log(value);
             });
 
-            checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
+            // checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
         }
     }, false);
 }

@@ -15,9 +15,10 @@ else {
         // チェックボックスが押された行のデータを表示する
         if (e.target.className == 'Checkbox-check') {
             checkBoxArea.length = 0;
-            var checkboxList = commentArea.childNodes;
-            console.log(checkboxList);
-            checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
+            commentArea.childNodes.forEach(function (value) {
+                console.log(value);
+            });
+            // checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
         }
     }, false);
 }
