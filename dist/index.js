@@ -35,12 +35,17 @@ function submit() {
     var timeElement = document.getElementById('time');
     // commentArea[5].text = timeElement.value;
     alert('TEST');
+    var b = document.createElement("div");
+    var e = document.getElementsByClassName('CommentCommandInput')[0];
     commentArea.childNodes.forEach(function (value) {
         try {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                value.children[1].text = timeElement.value;
+                value.children[1].textContent = timeElement.value;
+                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(e, b), e.dispatchEvent(new Event('input', {
+                    bubbles: !0
+                }));
             }
         }
         catch (_a) {
