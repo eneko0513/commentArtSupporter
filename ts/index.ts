@@ -34,7 +34,7 @@ function submit() {
     // commentArea[5].text = timeElement.value;
     alert('TEST');
     var b = document.createElement("div");
-    var e = document.getElementsByClassName('CommentCommandInput')[0];
+    var e = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
     commentArea.childNodes.forEach(function (value: any) {
         try {
             // チェックボックス列のチェック状態の確認
