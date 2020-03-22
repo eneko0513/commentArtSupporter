@@ -35,4 +35,15 @@ function submit() {
     var timeElement = document.getElementById('time');
     // commentArea[5].text = timeElement.value;
     alert('TEST');
+    commentArea.childNodes.forEach(function (value) {
+        try {
+            // チェックボックス列のチェック状態の確認
+            if (value.children[0].children[0].children[0].checked) {
+                // 時間の変更
+                value.children[1].text = timeElement.value;
+            }
+        }
+        catch (_a) {
+        }
+    });
 }

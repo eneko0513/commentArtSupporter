@@ -33,4 +33,15 @@ function submit() {
     const timeElement: HTMLInputElement = document.getElementById('time') as HTMLInputElement;
     // commentArea[5].text = timeElement.value;
     alert('TEST');
+    commentArea.childNodes.forEach(function (value: any) {
+        try {
+            // チェックボックス列のチェック状態の確認
+            if (value.children[0].children[0].children[0].checked) {
+                // 時間の変更
+                value.children[1].text = timeElement.value;
+            }
+        } catch {
+
+        }
+    });
 }
