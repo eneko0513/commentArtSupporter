@@ -37,13 +37,13 @@ function submit() {
     alert('TEST');
     var b = document.createElement("div");
     var e = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
-    commentArea.childNodes.forEach(function (value) {
+    commentArea.childNodes.forEach(function (value, index) {
         try {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
                 // value.children[1].value = timeElement.value;
-                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'textContent').set.call(e, timeElement.value), e.dispatchEvent(new Event('input', {
+                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'textContent').set.call(document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0], timeElement.value), document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0].dispatchEvent(new Event('input', {
                     bubbles: !0
                 }));
             }
