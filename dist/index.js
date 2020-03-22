@@ -45,8 +45,7 @@ function submit() {
                 // value.children[1].value = timeElement.value;
                 var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0];
                 // temp.data = timeElement.value;
-                document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0].textContent = "01:55.00";
-                temp.dispatchEvent(new Event('input', {
+                document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0].textContent = "01:55.00", temp.dispatchEvent(new Event('input', {
                     bubbles: !0
                 }));
                 /*
