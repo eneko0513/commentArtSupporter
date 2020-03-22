@@ -40,8 +40,8 @@ function submit() {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                value.children[1].textContent = timeElement.value;
-                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!.call(e, b), e.dispatchEvent(new Event('input', {
+                // value.children[1].value = timeElement.value;
+                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!.call(e, timeElement.value), e.dispatchEvent(new Event('input', {
                     bubbles: !0
                 }))
             }
