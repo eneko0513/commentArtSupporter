@@ -34,7 +34,6 @@ else {
 function submit() {
     var timeElement = document.getElementById('time');
     // commentArea[5].text = timeElement.value;
-    alert('TEST');
     var b = document.createElement("div");
     var e = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
     commentArea.childNodes.forEach(function (value, index) {
@@ -42,17 +41,10 @@ function submit() {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                // value.children[1].value = timeElement.value;
                 var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0];
-                // temp.data = timeElement.value;
-                document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0].textContent = "01:55.00", temp.dispatchEvent(new Event('input', {
+                Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
                     bubbles: !0
                 }));
-                /*
-                Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
-                    bubbles: !0
-                }))
-                */
             }
         }
         catch (_a) {
