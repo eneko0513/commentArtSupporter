@@ -14,7 +14,10 @@ if (ownerEditContainerHeader == null) {
         if (e.target.className == 'Checkbox-check') {
             checkBoxArea.length = 0;
 
-            // const checkboxList: HTMLElement[] = commentArea;
+            const checkboxList: any = commentArea.childNodes;
+            checkboxList.forEach(function(value: any){
+                console.log(value);
+            });
 
             checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
         }
