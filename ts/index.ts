@@ -39,7 +39,7 @@ function submit() {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                const temp: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0].childNodes[0];
+                const temp: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
                     bubbles: !0
                 }))
