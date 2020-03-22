@@ -14,14 +14,16 @@ if (ownerEditContainerHeader == null) {
         if (e.target.className == 'Checkbox-check') {
             checkBoxArea.length = 0;
             commentArea.childNodes.forEach(function(value: any){
-                console.log(value);
+                if (typeof value.attributes[2].value !== undefined) {
+                    console.log(value.attributes[2].value);
+                }
             });
         }
     }, false);
 }
 
 function submit() {
-    const timeElement: HTMLElement = document.getElementById('time') as HTMLElement;
-    // commentArea[5].text = timeElement.textContent;
+    const timeElement: HTMLInputElement = document.getElementById('time') as HTMLInputElement;
+    // commentArea[5].text = timeElement.value;
     alert('TEST');
 }
