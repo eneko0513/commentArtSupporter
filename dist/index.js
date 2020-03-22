@@ -17,8 +17,12 @@ else {
             checkBoxArea.length = 0;
             commentArea.childNodes.forEach(function (value) {
                 try {
-                    if (typeof value.attributes[2].value !== undefined) {
-                        console.log(value.attributes[2].value);
+                    // チェックボックス列のチェック状態の確認
+                    if (value.children[0].children[0].children[0].checked) {
+                        console.log(true);
+                    }
+                    else {
+                        console.log(false);
                     }
                 }
                 catch (_a) {
