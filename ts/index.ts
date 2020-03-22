@@ -5,8 +5,12 @@ if (ownerEditContainerHeader == null) {
 } else {
     // イベントリスナー追加
     let gridElement: HTMLElement = document.getElementById('enquete-placeholder') as HTMLElement;
-    gridElement.insertAdjacentHTML('afterend', '<div id="commentGrid"><div id="msg">LOADING</div></div>');
+    gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" name="time" size="20" maxlength="20"></div>');
     document.addEventListener('click', function (e: any) {
         console.log(e.target);
+        // チェックボックスが押された行のデータを表示する
+        if (e.target.className == 'Checkbox-check') {
+            alert('TEST');
+        }
     }, false);
 }
