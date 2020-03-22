@@ -13,7 +13,7 @@ else {
     document.addEventListener('change', function (e) {
         console.log(e.target);
         // チェックボックスが押された行のデータを表示する
-        if (e.target.className == 'Checkbox-check') {
+        if (e.target.className == 'CheckboxInput') {
             checkBoxArea.length = 0;
             commentArea.childNodes.forEach(function (value) {
                 try {
