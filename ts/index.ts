@@ -1,4 +1,5 @@
-let ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;;
+const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
+let checkBoxArea: HTMLElement[] = [];
 // 投コメ画面じゃなければ終わり
 if (ownerEditContainerHeader == null) {
     alert('投コメ編集画面で起動してください')
@@ -11,6 +12,7 @@ if (ownerEditContainerHeader == null) {
         // チェックボックスが押された行のデータを表示する
         if (e.target.className == 'Checkbox-check') {
             alert('TEST');
+            checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
         }
     }, false);
 }
