@@ -1,5 +1,6 @@
 const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
 let checkBoxArea: HTMLElement[] = [];
+const commentArea: HTMLElement = document.querySelector('#js-app > div > div.WatchAppContainer-main > div.MainContainer.is-ownerEdit > div.MainContainer-playerPanel > div > div > div.OwnerEditPanelContent > div > div.DataGrid-DataGrid.CommentPanelDataGrid-DataGrid > div > div') as HTMLElement;
 // 投コメ画面じゃなければ終わり
 if (ownerEditContainerHeader == null) {
     alert('投コメ編集画面で起動してください')
@@ -11,7 +12,10 @@ if (ownerEditContainerHeader == null) {
         console.log(e.target);
         // チェックボックスが押された行のデータを表示する
         if (e.target.className == 'Checkbox-check') {
-            alert('TEST');
+            checkBoxArea.length = 0;
+
+            // const checkboxList: HTMLElement[] = commentArea;
+
             checkBoxArea.push(e.target.parentNode.parentElement.parentElement.children[1]);
         }
     }, false);
