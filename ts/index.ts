@@ -1,3 +1,6 @@
+declare var require: any;
+import $ = require('jquery');
+
 const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
 let checkBoxArea: HTMLElement[] = [];
 const commentArea: HTMLElement = document.querySelector('#js-app > div > div.WatchAppContainer-main > div.MainContainer.is-ownerEdit > div.MainContainer-playerPanel > div > div > div.OwnerEditPanelContent > div > div.DataGrid-DataGrid.CommentPanelDataGrid-DataGrid > div > div') as HTMLElement;
@@ -43,16 +46,16 @@ function submit() {
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
                 const temp: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
-                $('.InlineEdit.OwnerCommentEditContainer-inlineEdit').addClass("isEditing");
+                $('.InlineEdit.OwnerCommentEditContainer-inlineEdit').replaceWith("<textarea>" + $('.InlineEdit.OwnerCommentEditContainer-inlineEdit').text() + "</textarea>");
                 temp.textContent = timeElement.value;
-                $('.InlineEdit.OwnerCommentEditContainer-inlineEdit').removeClass("isEditing");
 
                 //Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'textContent')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
                 //     bubbles: !0
                 //}))
             }
-        } catch(e) {
+        } catch (e) {
             console.log(e);
         }
     });
 }
+
