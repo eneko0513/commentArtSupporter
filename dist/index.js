@@ -10,6 +10,7 @@ else {
     // イベントリスナー追加
     var gridElement = document.getElementById('enquete-placeholder');
     gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
+    document.addEventListener;
     document.addEventListener('change', function (e) {
         console.log(e.target);
         // チェックボックスが押された行のデータを表示する
@@ -42,14 +43,16 @@ function submit() {
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
                 var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
+                $('.InlineEdit.OwnerCommentEditContainer-inlineEdit').addClass("isEditing");
                 temp.textContent = timeElement.value;
-                temp.onchange();
+                $('.InlineEdit.OwnerCommentEditContainer-inlineEdit').removeClass("isEditing");
                 //Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'textContent')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
                 //     bubbles: !0
                 //}))
             }
         }
-        catch (_a) {
+        catch (e) {
+            console.log(e);
         }
     });
 }
