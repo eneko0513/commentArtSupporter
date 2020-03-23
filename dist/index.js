@@ -51,7 +51,7 @@ function submit() {
                 var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
                 $(temp).replaceWith("<textarea class=\"InlineEdit-editor\" rows=1>" + $(temp).text() + "</textarea>");
                 $(".InlineEdit-editor")[0].textContent = timeElement.value;
-                $(".InlineEdit-editor")[0].replaceWith("<div class=\"InlineEdit OwnerCommentEditContainer-inlineEdit\">" + timeElement.value + "</div>");
+                $(".InlineEdit-editor")[0].replaceWith("<div class=\"InlineEdit OwnerCommentEditContainer-inlineEdit\">" + $(".InlineEdit-editor")[0].textContent + "</div>");
                 //Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'textContent')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
                 //     bubbles: !0
                 //}))
