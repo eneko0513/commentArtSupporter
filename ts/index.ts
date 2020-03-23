@@ -43,8 +43,12 @@ if (ownerEditContainerHeader == null) {
 function submit() {
     const timeElement: HTMLInputElement = document.getElementById('time') as HTMLInputElement;
     // commentArea[5].text = timeElement.value;
-    var b = document.createElement("div");
-    var e = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
+    var temp: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
+    $(temp).click();
+    var test = $(temp)[0].lastChild;
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")!.set!.call(test, timeElement.value), test.dispatchEvent(new Event("input", {
+        bubbles: !0
+    }));
     commentArea.childNodes.forEach(function (value: any, index: number) {
         try {
             // チェックボックス列のチェック状態の確認
