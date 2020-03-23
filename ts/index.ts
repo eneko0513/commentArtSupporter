@@ -37,7 +37,9 @@ script.addEventListener('load', function () {
                 }
             }, false);
             // コメント欄の表示領域を調整
-            $(".OwnerEditPanelContent").css("top", "70px !important");
+            $(".OwnerEditPanelContent").css({
+                'top': '70px'
+            });
         }
 
         function submit() {
