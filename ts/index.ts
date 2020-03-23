@@ -1,5 +1,5 @@
 declare var require: any;
-import $ = require('jquery');
+import $ from 'jquery';
 
 const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
 let checkBoxArea: HTMLElement[] = [];
