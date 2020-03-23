@@ -40,8 +40,8 @@ function submit() {
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
                 const temp: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
-                Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
-                    bubbles: !0
+                Object.getOwnPropertyDescriptor(HTMLDivElement.prototype, 'textContent')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
+                     bubbles: !0
                 }))
             }
         } catch {
