@@ -1,6 +1,12 @@
 const path = require('path');
 
 module.exports = {
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: "jquery"
+        })
+    ],
     // モード値を production に設定すると最適化された状態で、
     // development に設定するとソースマップ有効でJSファイルが出力される
     mode: 'development', // "production" | "development" | "none"
