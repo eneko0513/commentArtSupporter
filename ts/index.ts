@@ -47,12 +47,13 @@ function submit() {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                const tempRow: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[index];
+                const tempRow: any = value.children[1].children[0];
                 $(tempRow).click();
                 const vposCellElement = $(tempRow)[0].lastChild;
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")!.set!.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
+                $(tempRow).blur();
             }
         } catch (e) {
             console.log(e);
