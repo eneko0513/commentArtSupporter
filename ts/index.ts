@@ -13,11 +13,12 @@ const commentArea: HTMLElement = document.querySelector('#js-app > div > div.Wat
 if (ownerEditContainerHeader == null) {
     alert('投コメ編集画面で起動してください')
 } else {
-    // イベントリスナー追加
-    let gridElement: HTMLElement = document.getElementById('enquete-placeholder') as HTMLElement;
-    gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
+    // コメント欄の表示領域を調整
+    $(".OwnerEditPanelContent").css("top", "70px !important");
 
-    document.addEventListener
+    // イベントリスナー追加
+    let insertElementPosition: HTMLElement = document.getElementsByClassName('Grid OwnerEditPanelHeader')[0] as HTMLElement;
+    insertElementPosition.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
 
     document.addEventListener('change', function (e: any) {
         console.log(e.target);
@@ -53,7 +54,7 @@ function submit() {
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")!.set!.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
-                $(tempRow).blur();
+                $(vposCellElement)[0].blur();
             }
         } catch (e) {
             console.log(e);

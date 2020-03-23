@@ -13,10 +13,11 @@ if (ownerEditContainerHeader == null) {
     alert('投コメ編集画面で起動してください');
 }
 else {
+    // コメント欄の表示領域を調整
+    $(".OwnerEditPanelContent").css("top", "70px !important");
     // イベントリスナー追加
-    var gridElement = document.getElementById('enquete-placeholder');
-    gridElement.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
-    document.addEventListener;
+    var insertElementPosition = document.getElementsByClassName('Grid OwnerEditPanelHeader')[0];
+    insertElementPosition.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
     document.addEventListener('change', function (e) {
         console.log(e.target);
         // チェックボックスが押された行のデータを表示する
@@ -51,7 +52,7 @@ function submit() {
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value").set.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
-                $(tempRow).blur();
+                $(vposCellElement)[0].blur();
             }
         }
         catch (e) {
