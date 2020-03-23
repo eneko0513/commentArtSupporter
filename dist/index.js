@@ -40,33 +40,17 @@ else {
 }
 function submit() {
     var timeElement = document.getElementById('time');
-    // commentArea[5].text = timeElement.value;
-    var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
-    $(temp).click();
-    var test = $(temp)[0].lastChild;
-    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(test, timeElement.value), test.dispatchEvent(new Event("input", {
-        bubbles: !0
-    }));
     commentArea.childNodes.forEach(function (value, index) {
         try {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
-                $(temp).click();
-                var test = $(temp)[0].lastChild;
-                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(test, timeElement.value), test.dispatchEvent(new Event("input", {
+                var tempRow = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[index];
+                $(tempRow).click();
+                var vposCellElement = $(tempRow)[0].lastChild;
+                Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value").set.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
-                // $(temp)[0].textContent = timeElement.value;
-                //Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'textContent')!.set!.call(temp, timeElement.value), temp.dispatchEvent(new Event('input', {
-                //    bubbles: !0
-                //}))
-                // $(temp).blur();
-                // $(temp).replaceWith("<textarea class=\"InlineEdit-editor\" rows=1>" + $(temp).text() + "</textarea>");
-                // $(".InlineEdit-editor")[0].textContent = timeElement.value;
-                // $(".InlineEdit-editor")[0].blur();
-                // $(".InlineEdit-editor")[0].replaceWith("<div class=\"InlineEdit OwnerCommentEditContainer-inlineEdit\">" + $(".InlineEdit-editor")[0].textContent + "</div>");
             }
         }
         catch (e) {
