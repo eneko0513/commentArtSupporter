@@ -50,7 +50,8 @@ function submit() {
                 // 時間の変更
                 var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
                 $(temp).click();
-                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(temp, timeElement.value), temp.dispatchEvent(new Event("input", {
+                var test = $(temp)[0].lastChild;
+                Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(test, timeElement.value), test.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
                 // $(temp)[0].textContent = timeElement.value;
