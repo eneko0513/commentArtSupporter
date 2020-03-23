@@ -48,7 +48,7 @@ script.addEventListener('load', function () {
 document.head.appendChild(script);
 function submit() {
     const timeElement: HTMLInputElement = document.getElementById('time') as HTMLInputElement;
-    commentArea.childNodes.forEach(function (value: any, index: number) {
+    commentArea.childNodes.forEach(function (value: any) {
         try {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
@@ -60,6 +60,8 @@ function submit() {
                     bubbles: !0
                 }));
                 $(vposCellElement)[0].blur();
+                //3秒スリープ
+                sleep(100);
             }
         } catch (e) {
             console.log(e);
@@ -67,3 +69,12 @@ function submit() {
     });
 }
 
+//引数にはミリ秒を指定します。（例：5秒の場合は5000）
+function sleep(a: any) {
+    var dt1 = new Date().getTime();
+    var dt2 = new Date().getTime();
+    while (dt2 < dt1 + a) {
+        dt2 = new Date().getTime();
+    }
+    return;
+}

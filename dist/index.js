@@ -48,7 +48,7 @@ script.addEventListener('load', function () {
 document.head.appendChild(script);
 function submit() {
     var timeElement = document.getElementById('time');
-    commentArea.childNodes.forEach(function (value, index) {
+    commentArea.childNodes.forEach(function (value) {
         try {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
@@ -60,10 +60,21 @@ function submit() {
                     bubbles: !0
                 }));
                 $(vposCellElement)[0].blur();
+                //3秒スリープ
+                sleep(100);
             }
         }
         catch (e) {
             console.log(e);
         }
     });
+}
+//引数にはミリ秒を指定します。（例：5秒の場合は5000）
+function sleep(a) {
+    var dt1 = new Date().getTime();
+    var dt2 = new Date().getTime();
+    while (dt2 < dt1 + a) {
+        dt2 = new Date().getTime();
+    }
+    return;
 }
