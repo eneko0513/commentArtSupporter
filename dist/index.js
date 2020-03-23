@@ -1,4 +1,10 @@
 "use strict";
+var head = document.getElementsByTagName('head');
+var script = document.createElement('script');
+//ここで任意のjQueryを読み込ませる
+script.setAttribute('src', 'https://code.jquery.com/jquery-1.12.4.min.js');
+script.setAttribute('type', 'text/javascript');
+document.head.appendChild(script);
 var ownerEditContainerHeader = document.querySelector('.OwnerEditMenuContainer-heading');
 var checkBoxArea = [];
 var commentArea = document.querySelector('#js-app > div > div.WatchAppContainer-main > div.MainContainer.is-ownerEdit > div.MainContainer-playerPanel > div > div > div.OwnerEditPanelContent > div > div.DataGrid-DataGrid.CommentPanelDataGrid-DataGrid > div > div');

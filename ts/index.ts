@@ -1,3 +1,11 @@
+var head: any = document.getElementsByTagName('head');
+var script: any = document.createElement('script');
+//ここで任意のjQueryを読み込ませる
+script.setAttribute('src', 'https://code.jquery.com/jquery-1.12.4.min.js');
+script.setAttribute('type', 'text/javascript');
+document.head.appendChild(script);
+
+
 const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
 let checkBoxArea: HTMLElement[] = [];
 const commentArea: HTMLElement = document.querySelector('#js-app > div > div.WatchAppContainer-main > div.MainContainer.is-ownerEdit > div.MainContainer-playerPanel > div > div > div.OwnerEditPanelContent > div > div.DataGrid-DataGrid.CommentPanelDataGrid-DataGrid > div > div') as HTMLElement;
