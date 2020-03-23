@@ -13,8 +13,6 @@ if (ownerEditContainerHeader == null) {
     alert('投コメ編集画面で起動してください');
 }
 else {
-    // コメント欄の表示領域を調整
-    $(".OwnerEditPanelContent").css("top", "70px !important");
     // イベントリスナー追加
     var insertElementPosition = document.getElementsByClassName('Grid OwnerEditPanelHeader')[0];
     insertElementPosition.insertAdjacentHTML('afterend', '<div id="">設定時間：<input type="text" id="time" name="time" size="20" maxlength="20"><input onclick="submit();" type="submit" value="設定"></div>');
@@ -38,6 +36,8 @@ else {
             });
         }
     }, false);
+    // コメント欄の表示領域を調整
+    $(".OwnerEditPanelContent").css("top", "70px !important");
 }
 function submit() {
     var timeElement = document.getElementById('time');
