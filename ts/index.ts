@@ -3,12 +3,14 @@ var script: any = document.createElement('script');
 //ここで任意のjQueryを読み込ませる
 script.setAttribute('src', 'https://code.jquery.com/jquery-1.12.4.min.js');
 script.setAttribute('type', 'text/javascript');
+const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
+let checkBoxArea: HTMLElement[] = [];
+const commentArea: HTMLElement = document.querySelector('#js-app > div > div.WatchAppContainer-main > div.MainContainer.is-ownerEdit > div.MainContainer-playerPanel > div > div > div.OwnerEditPanelContent > div > div.DataGrid-DataGrid.CommentPanelDataGrid-DataGrid > div > div') as HTMLElement;
+
 script.addEventListener('load', function () {
+
     // ここにjQueryの記述をする
     $(function () {
-        const ownerEditContainerHeader: Element = document.querySelector('.OwnerEditMenuContainer-heading') as HTMLInputElement;
-        let checkBoxArea: HTMLElement[] = [];
-        const commentArea: HTMLElement = document.querySelector('#js-app > div > div.WatchAppContainer-main > div.MainContainer.is-ownerEdit > div.MainContainer-playerPanel > div > div > div.OwnerEditPanelContent > div > div.DataGrid-DataGrid.CommentPanelDataGrid-DataGrid > div > div') as HTMLElement;
         // 投コメ画面じゃなければ終わり
         if (ownerEditContainerHeader == null) {
             alert('投コメ編集画面で起動してください')
@@ -41,29 +43,27 @@ script.addEventListener('load', function () {
                 'top': '70px'
             });
         }
-
-        function submit() {
-            const timeElement: HTMLInputElement = document.getElementById('time') as HTMLInputElement;
-            commentArea.childNodes.forEach(function (value: any, index: number) {
-                try {
-                    // チェックボックス列のチェック状態の確認
-                    if (value.children[0].children[0].children[0].checked) {
-                        // 時間の変更
-                        const tempRow: any = value.children[1].children[0];
-                        $(tempRow).click();
-                        const vposCellElement = $(tempRow)[0].lastChild;
-                        Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")!.set!.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
-                            bubbles: !0
-                        }));
-                        $(vposCellElement)[0].blur();
-                    }
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-        }
     })
 })
 document.head.appendChild(script);
-
+function submit() {
+    const timeElement: HTMLInputElement = document.getElementById('time') as HTMLInputElement;
+    commentArea.childNodes.forEach(function (value: any, index: number) {
+        try {
+            // チェックボックス列のチェック状態の確認
+            if (value.children[0].children[0].children[0].checked) {
+                // 時間の変更
+                const tempRow: any = value.children[1].children[0];
+                $(tempRow).click();
+                const vposCellElement = $(tempRow)[0].lastChild;
+                Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")!.set!.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
+                    bubbles: !0
+                }));
+                $(vposCellElement)[0].blur();
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    });
+}
 
