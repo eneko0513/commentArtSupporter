@@ -51,7 +51,7 @@ function submit() {
                 var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
                 $(temp).click();
                 $(temp)[0].textContent = "TEST";
-                $(temp).trigger('blur');
+                $(temp)[0].trigger('blur');
                 // $(temp).replaceWith("<textarea class=\"InlineEdit-editor\" rows=1>" + $(temp).text() + "</textarea>");
                 // $(".InlineEdit-editor")[0].textContent = timeElement.value;
                 // $(".InlineEdit-editor")[0].blur();

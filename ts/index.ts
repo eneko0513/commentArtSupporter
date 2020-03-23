@@ -50,10 +50,10 @@ function submit() {
             // チェックボックス列のチェック状態の確認
             if (value.children[0].children[0].children[0].checked) {
                 // 時間の変更
-                var temp = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
+                var temp: any = document.getElementsByClassName('InlineEdit OwnerCommentEditContainer-inlineEdit')[0];
                 $(temp).click();
                 $(temp)[0].textContent = "TEST";
-                $(temp).trigger('blur');
+                $(temp)[0].trigger('blur');
                 // $(temp).replaceWith("<textarea class=\"InlineEdit-editor\" rows=1>" + $(temp).text() + "</textarea>");
                 // $(".InlineEdit-editor")[0].textContent = timeElement.value;
                 // $(".InlineEdit-editor")[0].blur();
