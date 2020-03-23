@@ -56,6 +56,7 @@ function submit() {
                 // 時間の変更
                 var tempRow = value.children[1].children[0];
                 $(tempRow).click();
+                sleep(50);
                 var vposCellElement = $(tempRow)[0].lastChild;
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value").set.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
