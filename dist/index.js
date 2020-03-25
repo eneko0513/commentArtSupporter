@@ -56,21 +56,19 @@ function submit() {
                 // 時間の変更
                 var tempRow = value.children[1].children[0];
                 $(tempRow).click();
-                sleep(50);
                 var vposCellElement = $(tempRow)[0].lastChild;
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value").set.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
-                sleep(50);
                 $(vposCellElement)[0].blur();
-                //3秒スリープ
-                sleep(50);
             }
         }
         catch (e) {
             console.log(e);
         }
     });
+    // ここで違う要素をクリックする
+    $(timeElement)[0].click();
 }
 //引数にはミリ秒を指定します。（例：5秒の場合は5000）
 function sleep(a) {
