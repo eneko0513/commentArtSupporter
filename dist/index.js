@@ -60,6 +60,7 @@ function submit() {
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value").set.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
+                sleep(50);
                 $(vposCellElement)[0].blur();
             }
         }

@@ -60,6 +60,7 @@ function submit() {
                 Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")!.set!.call(vposCellElement, timeElement.value), vposCellElement.dispatchEvent(new Event("input", {
                     bubbles: !0
                 }));
+                sleep(50);
                 $(vposCellElement)[0].blur();
             }
         } catch (e) {
@@ -72,7 +73,7 @@ function submit() {
 }
 
 //引数にはミリ秒を指定します。（例：5秒の場合は5000）
-function sleep(a: any) {
+function sleep(a: number) {
     var dt1 = new Date().getTime();
     var dt2 = new Date().getTime();
     while (dt2 < dt1 + a) {
