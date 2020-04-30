@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "@types/jquery": "^3.3.33",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
